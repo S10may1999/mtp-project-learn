@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Panel - LearnTech</title>
+    <!-- Linking CSS (Thymeleaf will resolve static paths) -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <style>
+    	     html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+    </style>
+</head>
+<body>
+   <div th:replace="~{layout.html}">
+   <div th:fragment="content">
+    <!-- Home Section -->
+    <section id="home">
+        <div class="carousel-slider">
+            <div><img src="https://www.benchmarkmonitor.com/wp-content/uploads/2020/04/zz7h5g6PzP3baXYoZH5jum-1260x710.jpg" alt="Python Course"></div>
+            <div><img th:src="@{https://etinsights.et-edge.com/wp-content/uploads/2022/11/Education-Technology.jpg}" alt="Python Course"></div>
+            
+            <div><img th:src="@{https://belltechlogix.com/wp-content/uploads/2020/07/Virtual-Learning-Image.png}" alt="Welcome Image"></div>
+            <div><img th:src="@{https://www.impactlab.com/wp-content/uploads/2016/03/learning.jpg}" alt="Java Course"></div>
+            <div><img th:src="@{https://d19d5sz0wkl0lu.cloudfront.net/dims4/default/22cfd11/2147483647/resize/800x%3E/quality/90/?url=https:%2F%2Fatd-brightspot.s3.amazonaws.com%2F56%2F5e%2F0b3cdc9c4126a6da872014b96248%2Fadobestock-152613619.jpg}" alt="Python Course"></div>
+            <div><img th:src="@{https://www.atulhost.com/wp-content/uploads/2018/01/tech-trends-education.jpg}" alt="Python Course"></div>
+ 
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 style="color:#F5385D;">About Us</h2>
+        <p>At LearnTech, we offer a range of courses designed to help you achieve your career goals...</p>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2 style="color:#F5385D;">Our Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>Java Programming</h3>
+                <p>Master the art of Java development.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+            <div class="course-card">
+                <h3>Python Programming</h3>
+                <p>Become a Python pro and explore its applications.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+            <div class="course-card">
+                <h3>Web Development</h3>
+                <p>Learn how to create stunning websites from scratch.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 style="color:#F5385D;">Contact Us</h2>
+        <form id="contact-form" th:action="@{/contact}" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</div>
+</div>
+ </body>
+</html>

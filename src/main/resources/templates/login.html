@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Login.css">
+    <title>LearnTech Login</title>
+</head>
+<body>
+    <div class="main-body" th:replace="~{layout.html}">
+    	<div th:fragment="content">
+		    <div class="main">
+		        <div class="nameContainer">
+		            <!-- <img th:src="@{/css/assets/images/courseguru.png}" id="cmpLogo"/> -->
+		             <h1 style="color: white;">LearnTech</h1>
+		            
+		        </div>
+		        <div class="inptContainer">
+		            <div class="usernameConatiner">
+		                <img id="icon" th:src="@{/css/assets/icons/person.png}"/>
+		                <input type="text" name="username" placeholder="Username"/>
+		            </div>
+		            <div class="usernameConatiner">
+		                <img id="icon" th:src="@{/css/assets/icons/lock.png}"/>
+		                <input type="password"  name="password" placeholder="Password"/>
+		            </div>
+		            <div class="loginBtn" onclick="">
+		                Log in
+		            </div>
+		            <div class="urlText" style="color: white;">
+		                Don't Have Account ? <a href="#" style="color: black;">Register here</a> !
+		            </div>
+		            <hr>
+		            <div class="googleLoginBtn">
+		                <img th:src="@{/css/assets/icons/google.png}" alt="google" id="googleIcon">    
+		                <span>Login with google</span>
+		            </div>
+		        </div>
+		    </div>
+    	</div>
+    </div>
+</body>
+</html>

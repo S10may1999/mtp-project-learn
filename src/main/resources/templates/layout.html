@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Panel - LearnTech</title>
+    <!-- Linking CSS (Thymeleaf will resolve static paths) -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <style>
+    	     html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">LearnTech</div>
+        <ul class="left-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a id="register-btn" th:href="@{/register}">Register</a></li>
+            <li><a id="login-btn" th:href="@{/login}">Login</a></li>
+        </ul>
+    </nav>
+
+	<div class="content">
+		<div th:replace="~{::content}"></div>
+	</div>
+	
+	
+	
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>LearnTech</h3>
+                <p>Helping you achieve your career goals...</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@LearnTech.com</p>
+                <p>Phone: +91-8879657890</p>
+                <p>Address: 123 Main Street, Mumbai, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LearnTech. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+	   		
+	    $(document).ready(function(){
+	        $('.carousel-slider').slick({
+	            autoplay: true,
+	            autoplaySpeed: 2000, 
+	            dots: true,
+	            arrows: true,
+	        });
+	    });
+</script>
+    </script>
+</body>
+</html>

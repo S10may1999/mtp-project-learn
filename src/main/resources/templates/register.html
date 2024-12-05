@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Calibri, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color:#F5385D;
+      border: 1px solid black;
+      box-shadow: 0 0 4px rgba(0,0, 0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 10px;
+    }
+    option{
+      padding: 20px;
+      border-radius: 0;
+      font-size: 16px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }    
+    h1{
+      text-align: center;
+    }
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    .registerbtn {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      opacity: 0.9;
+    }
+    .registerbtn:focus{
+      outline: none;
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+      color: black;
+    }
+
+    input,textarea{
+      border-radius: 10px;
+      margin: 20px;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid black;
+      outline: none;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+      font-weight: 800
+
+    }
+
+    input:focus{
+      border: 1px solid pink;
+      
+    }
+
+    textarea:focus{
+      border: 1px solid pink;
+    }
+
+    select{
+      border-radius: 10px;
+      margin: 20px;
+      margin-top: 0;
+      padding: 10px;
+      border: 1px solid black;
+      outline: none;
+    }
+
+    label{
+      margin: 20px 20px 0 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <form>
+    <div class="container">
+        <h1 style="color: white;"> Welcome to LearnTech Register Yourself</h1>
+      
+      <label style="color: white;"> Fullname </label>
+      <input id="fname" type="text" name="firstname" placeholder="Fullname" size="15" required />
+     
+      <label style="color: white;">
+        Phone :
+      </label>
+      <input type="text" name="phone" placeholder="phone no." size="10" / required>
+      <label for="email" style="color: white;"><b>Email:</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+      <label for="password" style="color: white;"><b>Password:</b></label>
+      <input type="text" placeholder="Please Set Password" name="password" required>
+      <div>
+        <label style="color: white;">Country :</label>
+        <select id="referral" onchange="showReferralField()" required>
+          <option value="">Select Country</option>
+          <option value="linkedin">India</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <input id="mname" type="text" name="middlename" placeholder="please specify if selected other" size="15" input />
+      <div>
+        <label style="color: white;">State :</label>
+        <select id="referral" onchange="showReferralField()" required>
+          <option value="">Select State</option>
+          <option value="Maharashtra">Maharashtra</option>
+	        <option value="Uttar Pradesh">Uttar Pradesh</option>
+	        <option value="kerla">Kerla</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <input id="lname" type="text" name="lastname" placeholder="please specify if selected other" size="15" input />
+      <div>
+        <label style="color: white;">City :</label>
+        <select id="referral" onchange="showReferralField()" required>
+          <option value="">Select City</option>
+          <option value="Mumbai">Mumbai</option>
+	  <option value="Thane">Thane</option>
+	  <option value="Lucknow">Lucknow</option>
+	  <option value="Gorakhpur">Gorakhpur</option>
+	  <option value="Kochi">Kochi</option>
+  	  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <input id="mname" type="text" name="middlename" placeholder="please specify if selected other" size="15" input />
+      <label style="color: white;">
+        Postal Address :
+      </label>
+      <textarea cols="80" rows="5" placeholder="Please Enter Postal Address with Pin Code" value="address" required>
+</textarea>
+      <div>
+        <label style="color: white;" >
+          Course :
+        </label>
+
+        <select id="courses">
+          <option value="Course" required>Course</option>
+          <option value="BCA">BCA</option>
+          <option value="BBA">BBA</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="MBA">MBA</option>
+          <option value="MCA">MCA</option>
+          <option value="M.Tech">M.Tech</option>
+        </select>
+      </div>
+      <div style="color: white;">
+        <label>
+          Gender :
+        </label><br>
+        <input id="option" type="radio" value="Male" name="gender" checked> Male
+        <input id="option" type="radio" value="Female" name="gender"> Female
+        <input id="option" type="radio" value="Other" name="gender"> Other
+
+      </div>
+      <div>
+        <label style="color: white;">Referral :</label>
+        <select id="referral" onchange="showReferralField()" required>
+          <option value="">Select Referral</option>
+          <option value="linkedin">LinkedIn</option>
+          <option value="naukri">Naukri.com</option>
+          <option value="indeed">Indeed</option>
+          <option value="freshersworld">Freshersworld</option>
+          <option value="youtube">YouTube</option>
+          <option value="instagram">Instagram</option>
+          <option value="facebook">Facebook</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <input id="mname" type="text" name="middlename" placeholder="please specify if selected other" size="15" input />
+    
+      
+      <div id="otherReferralField" style="display: none;">
+        <label for="otherReferralInput" style="color: white;">Please specify:</label>
+        <input type="text" id="otherReferralInput" name="otherReferralInput">
+      </div>
+      
+      <button type="submit" class="registerbtn">Register</button>
+  </form>
+
+  <script>
+    function showReferralField() {
+      var referral = document.getElementById("referral").value;
+      var otherReferralField = document.getElementById("otherReferralField");
+
+      
+      if (referral === "other") {
+        otherReferralField.style.display = "block";
+      } else {
+        otherReferralField.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
