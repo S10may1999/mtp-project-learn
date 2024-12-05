@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Calibri, Helvetica, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     .container {
+      margin:100px;
       background-color:#F5385D;
       border: 1px solid black;
       box-shadow: 0 0 4px rgba(0,0, 0,0.2);
@@ -93,7 +87,9 @@
 </head>
 
 <body>
-  <form>
+  <div th:replace="~{layout.html}">
+	<div th:fragment="content">
+	<form>
     <div class="container">
         <h1 style="color: white;"> Welcome to LearnTech Register Yourself</h1>
       
@@ -195,7 +191,9 @@
       
       <button type="submit" class="registerbtn">Register</button>
   </form>
-
+		  	
+		  </div>
+  </div>
   <script>
     function showReferralField() {
       var referral = document.getElementById("referral").value;

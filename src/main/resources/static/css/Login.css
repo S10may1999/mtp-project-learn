@@ -1,13 +1,3 @@
-body{
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    
-    align-items:center;
-
-    
-}
-
 .nameContainer{
 	text-align:center;
 }
@@ -92,7 +82,6 @@ input:focus{
     transition-duration: 200ms;
 }
 .loginBtn:hover{
-    background-color: blue ;
     transition-duration: 200ms;
 }
 
