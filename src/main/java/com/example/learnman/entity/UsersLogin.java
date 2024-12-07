@@ -118,6 +118,10 @@ public class UsersLogin{
 		this.gender = gender;
 		this.refereal = refereal;
 	}
+	public UsersLogin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 }

@@ -89,24 +89,24 @@
 <body>
   <div th:replace="~{layout.html}">
 	<div th:fragment="content">
-	<form>
+	<form th:action="@{/register}" th:object="${registerUser}" method="POST">
     <div class="container">
         <h1 style="color: white;"> Welcome to LearnTech Register Yourself</h1>
       
       <label style="color: white;"> Fullname </label>
-      <input id="fname" type="text" name="firstname" placeholder="Fullname" size="15" required />
+      <input id="fname" type="text" th:field="*{fullName}" name="firstname" placeholder="Fullname" size="15" required />
      
       <label style="color: white;">
         Phone :
       </label>
-      <input type="text" name="phone" placeholder="phone no." size="10" / required>
+      <input type="text" name="phone" th:field="*{phoneNumber}"  placeholder="phone no." size="10" / required>
       <label for="email" style="color: white;"><b>Email:</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" th:field="*{emailId}" placeholder="Enter Email" name="email" required>
       <label for="password" style="color: white;"><b>Password:</b></label>
-      <input type="text" placeholder="Please Set Password" name="password" required>
+      <input type="text" th:field="*{password}" placeholder="Please Set Password" name="password" required>
       <div>
         <label style="color: white;">Country :</label>
-        <select id="referral" onchange="showReferralField()" required>
+        <select id="referral" th:field="*{country}" onchange="showReferralField()" required>
           <option value="">Select Country</option>
           <option value="linkedin">India</option>
           <option value="other">Other</option>
@@ -115,7 +115,7 @@
       <input id="mname" type="text" name="middlename" placeholder="please specify if selected other" size="15" input />
       <div>
         <label style="color: white;">State :</label>
-        <select id="referral" onchange="showReferralField()" required>
+        <select id="referral" th:field="*{state}" onchange="showReferralField()" required>
           <option value="">Select State</option>
           <option value="Maharashtra">Maharashtra</option>
 	        <option value="Uttar Pradesh">Uttar Pradesh</option>
@@ -126,7 +126,7 @@
       <input id="lname" type="text" name="lastname" placeholder="please specify if selected other" size="15" input />
       <div>
         <label style="color: white;">City :</label>
-        <select id="referral" onchange="showReferralField()" required>
+        <select id="referral" th:field="*{city}" onchange="showReferralField()" required>
           <option value="">Select City</option>
           <option value="Mumbai">Mumbai</option>
 	  <option value="Thane">Thane</option>
@@ -137,11 +137,11 @@
           <option value="other">Other</option>
         </select>
       </div>
-      <input id="mname" type="text" name="middlename" placeholder="please specify if selected other" size="15" input />
+      <input id="mname" type="text" th:field="*{address}" name="middlename" placeholder="please specify if selected other" size="15" input />
       <label style="color: white;">
         Postal Address :
       </label>
-      <textarea cols="80" rows="5" placeholder="Please Enter Postal Address with Pin Code" value="address" required>
+      <textarea cols="80" th:field="*{postalAddress}"  rows="5" placeholder="Please Enter Postal Address with Pin Code" value="address" required>
 </textarea>
       <div>
         <label style="color: white;" >
@@ -162,14 +162,14 @@
         <label>
           Gender :
         </label><br>
-        <input id="option" type="radio" value="Male" name="gender" checked> Male
+        <input id="option" type="radio" value="Male" th:field="*{gender}" name="gender" checked> Male
         <input id="option" type="radio" value="Female" name="gender"> Female
         <input id="option" type="radio" value="Other" name="gender"> Other
 
       </div>
       <div>
         <label style="color: white;">Referral :</label>
-        <select id="referral" onchange="showReferralField()" required>
+        <select id="referral" onchange="showReferralField()" th:field="*{refereal}" required>
           <option value="">Select Referral</option>
           <option value="linkedin">LinkedIn</option>
           <option value="naukri">Naukri.com</option>
